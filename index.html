@@ -36,14 +36,14 @@
         </style>
     <head>
         <script>
-            screen.addEventListener("orientationchange", () => {
-              console.log(`The orientation of the screen is: ${screen.orientation.type}`);
+            screen.orientation.onchange = (e) => {
+              console.log(`Screen orientation changed to: ${screen.orientation.type}`);
                 document.getElementById("current_orientation_text").textContent=`ORIENTATION: ${screen.orientation.type}`;
-            });
+            };
 
             function fullScreenToggle() {
-                 let image = document.getElementById("image");
-                 if(!document.fullScreenElement){
+                 let image = document.getElementById("img_container");
+                 if(!document.fullscreenElement){
                      console.log(`TRY TO FULLSCREEN with ${image}`);
                      image.requestFullscreen();
                  }else{
@@ -55,10 +55,10 @@
             function orientationToggle(){
                 let currentOrientation = screen.orientation.type;
                 console.log(`Current orientation of screen is: ${currentOrientation}`);
-                if(currentOrientation == "portrait"){
-                    screen.orientation.lock("landscape");
+                if(currentOrientation == "portrait-primary"){
+                    screen.orientation.lock("landscape-primary");
                 }else{
-                    screen.orientation.lock("portrait");
+                    screen.orientation.lock("portrait-primary");
                 }
                 document.getElementById("current_orientation_text").textContent=`ORIENTATION: ${screen.orientation.type}`;
             }
