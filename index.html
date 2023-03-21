@@ -36,6 +36,12 @@
         </style>
     <head>
         <script>
+            console.log(`ASSISTANT_HOST on SCRIPT START: ${window.AssistantHost}`);
+            //(window.AssistantHost || {}).ready();
+            window.setTimeout(() => {
+            console.log(`ASSISTANT_HOST on DELAY: ${window.AssistantHost}`);
+              window.AssistantHost;
+            },1000)
             screen.orientation.onchange = (e) => {
               console.log(`Screen orientation changed to: ${screen.orientation.type}`);
                 document.getElementById("current_orientation_text").textContent=`ORIENTATION: ${screen.orientation.type}`;
