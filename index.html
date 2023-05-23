@@ -1,84 +1,18 @@
 <!DOCTYPE html>
-    <html>
-        <style>
-            #img_container {
-                position:relative;
-                display:inline-block;
-                text-align:center;
-                border:1px solid red;
-                background-color:gray;
-            }
-            #button_container {
-              position: absolute;
-              display: flex;
-              flex-direction: column;
-              bottom:50%;
-              right:50%;
-            }
-            #current_orientation_text {
-              width:200px;
-              height:50px;
-              background-color: white;
-              border:1px solid black;
-              margin-top: 18px;
-              border-radius: 4px;
-            }
-            .button {
-              width:200px;
-              height:50px;
-              background-color: darkblue;
-              color: aliceblue;
-              margin-top: 18px;
-              border: none;
-              border-radius: 4px;
-              font-size: 12px;
-            } 
-        </style>
-    <head>
-        <script>
-            console.log(`ASSISTANT_HOST on SCRIPT START: ${window.AssistantHost}`);
-            //(window.AssistantHost || {}).ready();
-            window.setTimeout(() => {
-            console.log(`ASSISTANT_HOST on DELAY: ${window.AssistantHost}`);
-              window.AssistantHost;
-            },1000)
-            screen.orientation.onchange = (e) => {
-              console.log(`Screen orientation changed to: ${screen.orientation.type}`);
-                document.getElementById("current_orientation_text").textContent=`ORIENTATION: ${screen.orientation.type}`;
-            };
-
-            function fullScreenToggle() {
-                 let image = document.getElementById("img_container");
-                 if(!document.fullscreenElement){
-                     console.log(`TRY TO FULLSCREEN with ${image}`);
-                     image.requestFullscreen();
-                 }else{
-                     console.log("TRY TO EXIT FULLSCREEN");
-                     document.exitFullscreen();
-                 }
-            }
-
-            function orientationToggle(){
-                let currentOrientation = screen.orientation.type;
-                console.log(`Current orientation of screen is: ${currentOrientation}`);
-                if(currentOrientation == "portrait-primary"){
-                    screen.orientation.lock("landscape-primary");
-                }else{
-                    screen.orientation.lock("portrait-primary");
-                }
-                document.getElementById("current_orientation_text").textContent=`ORIENTATION: ${screen.orientation.type}`;
-            }
-        </script>
-        <title>Проверка full screen canvas</title>
-    </head>
-    <body>
-        <div id="img_container">
-            <img id="image" src="https://static01.nyt.com/images/2021/04/30/multimedia/30xp-meme/29xp-meme-superJumbo-v3.jpg?quality=75&auto=webp" alt="Italian Trulli"/>
-            <div id="button_container">
-                <button name="button" type="button" class="button" onclick="fullScreenToggle()">full_screen_toggle</button>
-                <button name="button2" type="button" class="button" onclick="orientationToggle()">orientation_toggle</button>
-                <p id="current_orientation_text"/>
-            </div>
-        </div>
-    </body>
-    </html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="The best apps built for SmartMarket platform"
+    />
+    <title>SmartMarket Catalog</title>
+  </head>
+  <body>
+    <a href="https://google.com">Basic link</a>
+    <a href="https://google.com" target="_blank">Link with target=_blank</a>
+    <a href="https://auth.api.polaris-iot.com/oauth/auth?client_id=sber&redirect_uri=https%3A%2F%2Fgateway.iot.sberdevices.ru%2Fgateway%2Fv1%2Fbinder%2Fbackward&response_type=code&state=%7B%22sid%22%3A%22chhkdq4j2ombmg8uui1g%22%7D">Polaris</a>
+  </body>
+</html>
