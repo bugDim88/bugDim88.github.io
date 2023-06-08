@@ -9,13 +9,17 @@
       content="The best apps built for SmartMarket platform"
     />
     <title>SmartMarket Catalog</title>
+    <script>
+        console.log("init");
+        console.log(window.AssistantHost);
+    </script>
   </head>
   <body>
-    <button onClick="window.open('https://google.com', '_blank')">
+    <button onClick="console.log(window.AssistantHost)">
           <img src="https://http.cat/510.jpg" />
     </button> 
-    <a href="https://google.com">Basic link</a>
-    <a href="https://google.com" target="_blank">Link with target=_blank</a>
-    <a href="https://auth.api.polaris-iot.com/oauth/auth?client_id=sber&redirect_uri=https%3A%2F%2Fgateway.iot.sberdevices.ru%2Fgateway%2Fv1%2Fbinder%2Fbackward&response_type=code&state=%7B%22sid%22%3A%22chhkdq4j2ombmg8uui1g%22%7D">Polaris</a>
+    <button onClick="AssistantHost.getSaluteId()">
+          <img src="https://http.cat/210.jpg" />
+    </button> 
   </body>
 </html>
