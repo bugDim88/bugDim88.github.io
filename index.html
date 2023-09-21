@@ -16,7 +16,7 @@
             document.documentElement.className = Telegram.WebApp.colorScheme;
         }
         Telegram.WebApp.onEvent('themeChanged', setThemeClass);
-        setThemeClass();
+        //setThemeClass();
     </script>
     <style>
         body {
@@ -293,7 +293,7 @@
 <body class="" style="visibility: hidden;">
 
 <section id="top_sect" class="second">
-    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
+    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, Suka!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
     <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
     <button onclick="DemoApp.expand();">Expand Webview</button>
@@ -793,7 +793,7 @@
             .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
                 ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
     }
-    Telegram.WebApp.setHeaderColor('secondary_bg_color');
+    // Telegram.WebApp.setHeaderColor('secondary_bg_color');
     Telegram.WebApp.onEvent('viewportChanged', setViewportData);
     setViewportData();
     Telegram.WebApp.onEvent('settingsButtonClicked', function() {
@@ -840,7 +840,7 @@
         document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
     });
 
-    DemoApp.testClipboard(document.getElementById('clipboard_test'));
+    // DemoApp.testClipboard(document.getElementById('clipboard_test'));
 </script>
 
 </body>
